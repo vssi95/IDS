@@ -16,7 +16,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title></title>
+	<title>Home</title>
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 	<link rel="stylesheet" type="text/css" href="style2.css">
 </head>
@@ -31,7 +31,7 @@
 		<div class="logo_content">
 			<div class="logo">
 				<i class='bx bx-pulse'></i>
-				<div class="logo_name">health</div>
+				<div class="logo_name">re-<span style="color: #ffd52d;">Life</div>
 			</div>
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
@@ -53,9 +53,9 @@
 			<li>
 				<a href="record.php">
 					<i class='bx bx-check-square' ></i>
-					<span class="link-name">Dosage Tracker</span>
+					<span class="link-name">Supplement</span>
 				</a>
-				<span class="tooltip">Dosage Tracker</span>
+				<span class="tooltip">Supplement</span>
 			</li>
 			<li>
 				<a href="vid.php">
@@ -78,6 +78,36 @@
 
 	<div class="content">
 		<div class="text">Home</div>
+
+		<div class="welcome">
+			Welcome <span><?php echo $_SESSION['username']; ?></span>!
+			<br><br><hr class="rounded"><br>
+			<h3>Welcome to <b>re-<span style="color:#ffd52d">Life</span></b>! We aim to motivate our users to live a healthy life with the following features:</h3>
+		</div>
+
+		<div class="contentbox">
+			<div class="box">
+				<div class="icon"><i class='bx bxs-calculator' ></i></div>
+				<div class="content-text">
+					<h3>BMI Calculator</h3>
+					<p>Calculate your <b>body mass index (BMI)</b>, a measure of body fat based on height and weight.</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="icon"><i class='bx bx-check-square' ></i></div>
+				<div class="content-text">
+					<h3>Supplement Tracker</h3>
+					<p>Record your supplement intakes for future references!</p>
+				</div>
+			</div>
+			<div class="box">
+				<div class="icon"><i class='bx bxl-youtube' ></i></div>
+				<div class="content-text">
+					<h3>Workout Videos</h3>
+					<p>Search for a range of workout videos from YouTube. Just enter your keyword!</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<script type="text/javascript">

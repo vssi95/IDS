@@ -12,7 +12,11 @@
         <div class="center">
             <h1>Sign Up</h1>
             <form method="post" action="signup.php">
-                <?php include('errors.php'); ?>
+
+                <br>
+
+                <span style="text-align: center; color: red;"><?php include('errors.php'); ?></span>
+                
                 <div class="txtfield">
                     <input type="text" name="username" value="<?php echo $username; ?>" required>
                     <span></span>
@@ -33,9 +37,9 @@
                     <span></span>
                     <label>Confirm Password</label>
                 </div>
-                <!--
-                <div class="pass">Forgot Password?</div>
-                -->
+
+            
+
                 <input type="submit" value="Sign Up" name="reg_user">
                 <div class="signin_link">
                     Already a member? <a href="login.php">Log In</a>

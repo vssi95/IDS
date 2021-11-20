@@ -22,14 +22,10 @@ if (isset($_POST['reg_user'])) {
   if (empty($username)) { array_push($errors, "Username is required"); }
   if (empty($email)) { array_push($errors, "Email is required"); }
   if (empty($password)) { array_push($errors, "Password is required"); }
-  if ($password != $c_password) { ?>
-      <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>The two passwords do not match</strong>
-      </div>
-      <?php
-      array_push($errors);
+  if ($password != $c_password) {
+  array_push($errors, "The two passwords do not match");
   }
+
 
   // first check the database to make sure 
   // a user does not already exist with the same username and/or email
@@ -38,22 +34,12 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
   
   if ($user) { // if user exists
-    if ($user['username'] === $username) { ?>
-      <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Username already exists</strong>
-      </div>
-      <?php
-      array_push($errors);
+    if ($user['username'] === $username) {
+      array_push($errors, "Username already exists");
     }
 
-    if ($user['email'] === $email) { ?>
-      <div class="alert">
-        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
-        <strong>Email already exists</strong>
-      </div>
-      <?php
-      array_push($errors);
+    if ($user['email'] === $email) {
+      array_push($errors, "email already exists");
     }
   }
 
@@ -63,7 +49,7 @@ if (isset($_POST['reg_user'])) {
 
   	$query = "INSERT INTO users (username, email, password) 
   			  VALUES('$username', '$email', '$password')";
-    
+
   	mysqli_query($db, $query);
   	$_SESSION['username'] = $username;
   	$_SESSION['success'] = "You are now logged in";

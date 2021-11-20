@@ -17,7 +17,7 @@
 		<div class="logo_content">
 			<div class="logo">
 				<i class='bx bx-pulse'></i>
-				<div class="logo_name">health</div>
+				<div class="logo_name">re-<span style="color: #ffd52d;">Life</div>
 			</div>
 			<i class='bx bx-menu' id="btn"></i>
 		</div>
@@ -39,9 +39,9 @@
 			<li>
 				<a href="record.php">
 					<i class='bx bx-check-square' ></i>
-					<span class="link-name">Dosage Tracker</span>
+					<span class="link-name">Supplement</span>
 				</a>
-				<span class="tooltip">Dosage Tracker</span>
+				<span class="tooltip">Supplement</span>
 			</li>
 			<li>
 				<a href="vid.php">

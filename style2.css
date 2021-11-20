@@ -268,8 +268,8 @@ nav{
     z-index: 0;
 }
 .content .text{
-    font-size: 4vh;
-    font-weight: 500;
+    font-size: 5vh;
+    font-weight: 600;
     color: #1d1b31;
     margin: 12px;
 }
@@ -323,6 +323,100 @@ nav{
 }
 .sidebar.active .profile #log-out{
     left: 88%;
+}
+
+/*------HOME------*/
+.content .welcome{
+    font-size: 4vh;
+    font-weight: 500;
+    color: #1d1b31;
+    margin: 15px;
+}
+.welcome h3{
+    font-size: 3.5vh;
+    font-weight: 500;
+    color: #1d1b31;
+    text-align: center;
+    margin-top: 20px;
+}
+hr.rounded {
+  border-top: 2px solid #121212;
+  border-radius: 5px;
+}
+.content .welcome span{
+    color: #9d68de;
+    font-style: bold;
+}
+.content .contentbox{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 30px auto;
+}
+.contentbox .box{
+    position: relative;
+    width: calc(400px - 30px);
+    height: calc(300px - 30px);
+    background: #121212;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.contentbox .box .icon{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffd52d;
+    transition: 0.5s;
+    z-index: 1;
+}
+.contentbox .box:hover .icon{
+    top: 20px;
+    left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.contentbox .box .icon i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #121212;
+}
+.contentbox .box:hover .icon i{
+    font-size: 40px;
+}
+.contentbox .box .content-text{
+    position: absolute;
+    top: 100%;
+    height: cacl(100% - 100px);
+    text-align: center;
+    padding: 20px;
+    box-shadow: border-box;
+    transition: 0.5s;
+    opacity: 0;
+}
+.contentbox .box:hover .content-text{
+    top: 100px;
+    opacity: 1;
+}
+.contentbox .box .content-text h3{
+    margin: 0 0 10px;
+    padding: 0;
+    color: white;
+    font-size: 24px;
+}
+.contentbox .box .content-text p{
+    margin: 0;
+    padding: 0;
+    color: white;
 }
 
 /*------BMI Calculator-------*/
@@ -494,7 +588,7 @@ nav{
     color: white;
     cursor: pointer;
     border-radius: 3px;
-    outline: nonw;
+    outline: none;
 }
 .wrapper .dosage-form .input-field:last-child{
     margin-bottom: 0;
@@ -538,6 +632,110 @@ table th {
 }
 
 @media screen and (max-width: 700px) {
+    /*--INDEX--*/
+    .banner{
+        width: 100%;
+        height: 100vh;
+        background-color: #121212;
+        background-size: cover;
+        background-position: center;
+    }
+    nav{
+        display: block;
+    }
+    .nav-links{
+        flex: 1;
+        text-align:center;
+    }
+    .home-content{
+        width: 100%;
+        position: absolute;
+        top: 30%;
+        text-align: center;
+        color: white;
+        z-index: 2;
+    }
+    .home-title{
+        font-size: 8vh;
+        line-height: 100px;
+        font-weight: bold;
+    }
+    .home-content p{
+        font-size: 2.6vh;
+        padding: 0 2%;
+    }
+    .home-content button{
+        padding: 15px 25px;
+        margin: 20px;
+        font-size: 2.5vh;
+        letter-spacing: 1px;
+        border: 2px solid #ffd52d;
+        color: white;
+        cursor: pointer;
+        background: linear-gradient(to right, transparent 50%, #ffd52d 50%);
+        background-size: 200%;
+        background-position: left;
+        transition: background-position 0.5s;
+        border-radius: 5px;
+        z-index: 2;
+    }
+    .banner svg{
+        opacity: 0;
+    }
+
+    /*--PRIVACY POLICY--*/
+    .header{
+        height: 10vh;
+        width: 100%;
+        background: transparent;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        color: white;
+    }
+    .header h1{
+        padding-top: 3%;
+        font-size: 50px;
+    }
+    .info-container{
+        background-color: #121212;
+        color: #e8e8e8;
+        margin: 50px 5%;
+        padding: 10%;
+        padding-bottom: 5%;
+        border-radius: 20px;
+        box-shadow: 0 3px 26px 0 rgba(0,0,0,0.20);
+    }
+    .info-container ul li{
+        margin-left: 20px;
+        font-size: 2.2vh;
+    }
+    .info-container p{
+        text-align: justify;
+        text-justify: inter-word;
+        font-size: 2.2vh;
+    }
+
+    /*--ABOUT--*/
+    .about-container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .about-container .img-container{
+        display: none;
+    }
+    .img-container{
+        width: 100%;
+        text-align: center;
+    }
+    .img-container img{
+        width: 50%;
+        border-radius: 10px;
+    }
+
     /*--NAV--*/
     .sidebar{
         height: 100%;
@@ -551,7 +749,7 @@ table th {
         z-index: 2;
     }
     .sidebar.active{
-        width: 90%;
+        width: 100%;
     }
     .sidebar .logo_content .logo{
         display: flex;
@@ -644,7 +842,8 @@ table th {
         position: absolute;
         height: 100%;
         width: calc(100% - 78px);
-        left: 78px;
+        left: 15%;
+        right: 15%;
         transition: all 0.5s ease;
         z-index: 0;
     }
@@ -668,6 +867,7 @@ table th {
         position: relative;
         padding: 10px 6px;
         height: 60px;
+        z-index: 2;
         background: #1d1b31;
     }
     .sidebar .profile-content .profile .profile-details{
@@ -703,6 +903,126 @@ table th {
     }
     .sidebar.active .profile #log-out{
         left: 88%;
+    }
+
+    /*--HOME--*/
+    .content .welcome{
+        font-size: 3vh;
+        font-weight: 500;
+        color: #1d1b31;
+        margin: 15px;
+    }
+    .welcome h3{
+        font-size: 2.5vh;
+        font-weight: 500;
+        color: #1d1b31;
+        text-align: center;
+        margin-top: 20px;
+    }
+    hr.rounded {
+      border-top: 2px solid #121212;
+      border-radius: 5px;
+    }
+    .content .welcome span{
+        color: #9d68de;
+        font-style: bold;
+    }
+    .content .contentbox{
+        position: absolute;
+        width: 50px;
+        height: 300px;
+        margin: 10px auto;
+        margin-right: 5px;
+        margin-left: 5px;
+        transform: translateX(20%);
+    }
+    .contentbox .box{
+        position: relative;
+        width: 250px;
+        height: 250px;
+        background: #121212;
+        float: left;
+        margin: 15px 5px;
+        box-sizing: border-box;
+        overflow: hidden;
+        border-radius: 10px;
+    }
+    
+    .contentbox .box .icon{
+        top: 30px;
+        left: calc(50% - 40px);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+    }
+    .contentbox .box .icon i{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 40px;
+        transition: 0.5s;
+        color: #121212;
+    }
+    
+    .contentbox .box .content-text{
+        top: 100px;
+        opacity: 1;
+    }
+    .contentbox .box .content-text h3{
+        margin: 0 0 10px;
+        padding: 0;
+        color: white;
+        font-size: 18px;
+    }
+    .contentbox .box .content-text p{
+        font-size: 12px;
+        margin: 0;
+        padding: 0;
+        color: white;
+    }
+
+    /*--CALCULATOR--*/
+    .bmi-container{
+        width: calc(100% - 78px);
+        min-width: 330px;
+        background-color: transparent;
+        height: 100%;
+        border-radius: 0;
+        bottom: 0;
+        padding-top: 80%;
+        padding-right: 0;
+        padding-bottom: 0;
+        box-shadow: none;
+    }
+    .bmi-row{
+        display: flex;
+        width: calc(100% - 78px);
+        margin-left: 10%;
+        align-items: center;
+        justify-content: space-between;
+        color: #121212;
+    }
+    .bmi-container input[type="range"]{
+        width: 70%;
+        height: 3.5px;
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #121212;
+        border-radius: 3px;
+        outline: none;
+    }
+    .bmi-container input[type="range"]::-webkit-slider-thumb{
+        -webkit-appearance: none;
+        appearance: none;
+        height: 15px;
+        width: 15px;
+        background-color: #9d68de;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    #category{
+        color: #121212;
     }
 
     /*--TABLE--*/
@@ -764,6 +1084,51 @@ table th {
         text-decoration: none;
         color: white;
         margin-left: 10px;
+        font-size: 16px;
+    }
+
+    /*--VIDEO SEARCH--*/
+    .container{
+        margin-top: 10%;
+        margin-right: 30px;
+        margin-left: 30px;
+    }
+    .container h1{
+        color: white;
+    }
+    .container .form form{
+        position: absolute;
+    }
+    .form label{
+        color: black;
+        font-size: 3vh;
+    }
+    .form-control {
+        padding: 10px;
+        width: 50%;
+        height: 2em;
+        background: none;
+        border: 4px solid #ffd52d;
+        border-radius: 50px;
+        box-sizing: border-box;
+        font-size: 3vh;
+        color: #ffd52d;
+        transition: none;
+    }
+    .form:hover input:valid{
+        width: 50%;
+        background: white;
+        border-radius: 50px;
+    }
+    .form form i{
+        opacity: 0;
+    }
+    .row{
+        padding-top: 50%;
+    }
+    iframe{
+        width: 100%;
+        height: 75%;
     }
 }
 .add-btn{
